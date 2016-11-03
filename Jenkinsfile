@@ -26,10 +26,10 @@ node {
     echo "Gonna build now"
     sh "./gradlew clean assembleDebug"
 
-//    stage 'Stage Archive'
-//    echo "Gonna archive now"
-//    //tell Jenkins to archive the apks
-//    archiveArtifacts artifacts: 'app/build/outputs/apk/*.apk', fingerprint: true
+    stage 'Stage Archive'
+    echo "Gonna archive now"
+    //tell Jenkins to archive the apks
+    archiveArtifacts artifacts: 'app/build/outputs/apk/*.apk', fingerprint: true
 
     //stage 'Stage Upload To Fabric'
     //sh "./gradlew crashlyticsUploadDistribution${flavor}Debug  -PBUILD_NUMBER=${env.BUILD_NUMBER}"
